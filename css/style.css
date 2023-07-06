@@ -1,0 +1,398 @@
+@import url(reset.css);
+
+:root {
+    --main-cinza: #CCCCCC;
+    --main-branco: #FFFFFF;
+    --main-preto: #000000;
+    --degrade-preto: rgba(5, 5, 5, 0.5 );
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: url(../img/fundo.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-weight: 300;
+}
+
+body, input {
+    font-family: 'Teko', sans-serif;
+}
+
+main {
+    width: 90vw;
+    height: 80vh;
+    margin: 10vh 8vw 10vh 5vw;
+    display: grid;
+    gap: 1vw;
+}
+
+.robotron {
+    background: url(../img/estrutura.png) no-repeat;
+    background-position: center;
+    position: relative;
+    z-index: -3;
+}
+
+.robo {
+    min-width: 288px;
+    width: 100%;
+    height: auto;
+    mix-blend-mode: difference;
+}
+
+.titulo {
+    transform: rotate(180deg);
+    font-weight: 500;
+    font-size: 80px;
+    position: absolute;
+    bottom: 2rem;
+    left: -1rem;
+    line-height: 0.8;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    color: rgba(255,255,255,0.8);
+    z-index: -2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.box {
+    background: rgba(0,0,0,0.6);
+    clip-path: polygon(calc(100% - 30px) 0, 100% 30px, 100% calc(100% - 30px), calc(100% - 30px) 100%, 30px 100%, 0 calc(100% - 30px), 0 30px, 30px 0);
+    border-left: 5px solid var(--main-cinza);
+    height: auto;
+    width: 330px;
+    position: relative;
+}
+
+/****codigo modificado****/
+
+.ajuste {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.pintura {
+    margin-top: 30px;
+}
+
+.cor__titulo {
+    font-size: 32px;
+    color: var(--main-branco);
+    text-transform: uppercase;
+    background-color: var(--degrade-preto);
+    text-align: center;
+    padding-top: 0.1em;
+    clip-path: polygon(calc(100% - 1em) 0, 100% 1em, 100% calc(100% - 1em),
+    calc(100% - 1em) 100%, 1em 100%, 0 calc(100% - 1em), 0 1em, 1em 0);
+}
+
+.cor {
+    margin-top: 10px;
+    background-color: var(--degrade-preto);
+    width: 300px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(calc(100% - 1px) 0, 100% 1em, 100% calc(100% - 1em),
+    calc(100% - 1em) 100%, 1em 100%, 0 calc(100% - 1px), 0 1em, 1em 0);
+    border-left: 0.2em solid var(--main-cinza);
+}
+
+.cor__robo {
+    width: 40px;
+    height: 35px;
+}
+
+.cor__robo:hover {
+    scale: 1.2;
+    cursor: pointer;
+}
+
+
+
+.escolher-cor label:hover {
+    cursor: pointer;
+    margin-top: -5px;
+}
+
+/****************************** Equipamentos *****/
+
+.equipamentos {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+}
+
+.montador {
+    height: auto;
+}
+
+.montador-conteudo {
+    padding: 2em 10%;
+}
+
+.peca {
+    height: 50px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.peca-titulo {
+    color: var(--main-branco);
+    text-transform: uppercase;
+    font-size: 2.5em;
+}
+
+.controle {
+    background: var(--main-preto);
+    border-radius: 25px;
+    float: right;
+    display: inline-flex;
+    padding: 5px;
+    align-items: center;
+    align-self: flex-end;
+}
+
+.controle-contador {
+    width: 1.4em;
+    height: 1em;
+    background: none;
+    border: 0;
+    margin: 0 1rem;
+    color: var(--main-branco);
+    text-align: center;
+    font-size: 2.5em;
+    display: inline-flex;
+    align-items: center;
+}
+
+.controle-ajuste {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 44px;
+    border-radius: 50%;
+    color: var(--main-cinza);
+    font-size: 4em;
+    background: var(--main-preto);
+    text-align: center;
+    border: 3px solid var(--main-cinza);
+    cursor: pointer;
+}
+
+.linha {
+    border-color: var(--main-cinza);
+}
+
+.producao {
+    margin: 20px 0;
+    font-size: 2em;
+    text-transform: uppercase;
+    padding: 0.2em 1em;
+    float: right;
+    border: 3px solid var(--main-branco);
+    background: var(--main-branco);
+    clip-path: polygon(100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 0);
+    cursor: pointer;
+}
+
+.producao:hover {
+    background: var(--main-preto);
+    color: var(--main-branco)
+}
+
+/****************************** Estatísticas *****/
+.estatisticas {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.estatistica {
+    margin: 10px 0;
+    color: var(--main-branco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.estatistica-titulo {
+    font-size: 2em;
+    border-bottom: 1px solid var(--main-cinza);
+    align-items: center;
+    flex-basis: 40%;
+    text-transform: uppercase;
+    order: 1
+}
+
+.estatistica-valor {
+    flex-basis: 30%;
+    position: relative;
+    text-align: center;
+    order: 2;
+}
+
+.estatistica-valor::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+    border: 1px solid var(--main-cinza);
+    border-radius: 50%;
+}
+
+.estatistica-numero {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-46%);
+    width: 100%;
+    line-height: 100%;
+    text-align: center;
+    font-size: 3em;
+    margin: 0;
+}
+
+.estatistica:nth-child(2n) .estatistica-titulo {
+    order: 2;
+    text-align: right;
+}
+
+.estatistica:nth-child(2n) .estatistica-valor {
+    order: 1;
+    margin: 10px 0 0;
+}
+
+
+@media screen and (min-width : 700px) {
+    
+    .robotron{
+     background-position: left;
+     background-size: 500px;
+    }
+ 
+    .robo {
+      min-width: 400px;
+      max-width: 600px;
+    }
+ 
+    .titulo { 
+     font-size: 6em;
+    }
+    .estatisticas, .pintura, .montador {
+     width: 70%;
+    }
+ 
+    .cor__titulo {
+     font-size: 4em;
+    }
+ 
+    .cor {
+     width: 100%;
+     height: auto;
+    }
+ 
+    .cor__robo {
+     margin: 10px 0;
+     width: 16%;
+     height: 90%;
+    }
+    .montador-conteudo {
+     width: 100%;
+    }
+ 
+    .estatistica-titulo, .peca-titulo {
+     font-size: 3em;
+    }
+ 
+    .controle-contador {
+       margin: 0 1rem;
+    } 
+}
+ 
+ @media screen and (min-width: 1200px) {
+
+    body {
+        overflow: hidden;
+    }
+ 
+     main {
+         display: flex;
+         align-items: flex-start;
+         justify-content: center;
+         margin: 12vh 2vh;
+         gap: 2vw;
+     }
+ 
+     .robo {
+        height: auto;
+        max-width: auto;
+        width: auto;
+        margin-left: 450px;
+     }
+
+    .robotron {
+        background: url(../img/estrutura.png) no-repeat;
+        background-position: right;
+        position: relative;
+    }
+         
+     .titulo {
+        font-size: 7em;
+        left: 33rem;
+     }
+ 
+      .box {
+        width: 400px;
+        height: 500px;
+        position: relative;
+     } 
+ 
+     .ajuste{
+        flex-direction: column;
+        flex-basis: 0%;
+     }
+ 
+     .estatisticas {
+        margin: 0;
+        text-align: center;
+        padding-top: 30px;
+     }
+
+     .estatistica-valor {
+        flex-basis: 20%;
+     }
+ 
+     .pintura {
+        margin-bottom: 12px;
+        width: 390px;
+     }
+
+     .cor__titulo {
+        font-size: 40px;
+     }
+ 
+     .equipamentos {
+        margin: 0 400px 0 0;
+        justify-content: flex-start;
+     }
+ 
+     .peca {
+        margin: 20px 0;
+     }
+
+     .producao {
+        font-weight: 500;
+     }
+ 
+     
+}
